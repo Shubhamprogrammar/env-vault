@@ -10,7 +10,7 @@
 *   **💻 Self-Healing Companion CLI**: High-speed full `.env` pushes and pulls. Integrated with a **silent token refresh interceptor** that automatically resolves expired access sessions.
 *   **🎨 Premium Glassmorphic Web UI**: A beautiful user interface styled with custom Google Typography (`Outfit` & `Plus Jakarta Sans`) and a sleek Lush Forest color scheme.
 *   **🔗 Git-like Workspace Linking**: Use `env-vault init <projectId>` inside a local directory to link it permanently. Daily pulls and pushes require **no project IDs**!
-*   **🔑 Dual-Token Authentication**: Secure authentication using Access Tokens (15-min) and Refresh Tokens (7-day) that automatically sync across web cookies and terminal sessions.
+*   **🔑 Dual-Token Authentication**: Secure authentication using Access Tokens and Refresh Tokens that automatically sync across web cookies and terminal sessions.
 
 ---
 
@@ -47,36 +47,6 @@ vault/
     ├── index.js                   # env-vault command processor
     └── package.json               # Binary configuration & NPM link command
 ```
-
----
-
-## ⚡ Quick Start (Local Development)
-
-### 1. Prerequisites
-Ensure you have [Node.js](https://nodejs.org) and [MongoDB](https://www.mongodb.com/) running locally or an active MongoDB Atlas cluster.
-
-### 2. Installation
-Clone the repository and install all workspace dependencies concurrently from the root:
-```bash
-npm install
-```
-
-### 3. Server Configuration
-Create a `.env` file in the `backend/` directory:
-```env
-PORT=5000
-MONGODB_URI=mongodb://localhost:27017/envvault
-JWT_SECRET=your_super_secret_jwt_key
-ENCRYPTION_KEY=your_32_character_encryption_key_here
-```
-
-### 4. Running the Dev Suites Concurrently
-Execute the master monorepo command at the root to launch both the frontend (Vite) and backend (Express) concurrently:
-```bash
-npm run dev
-```
-*   **Web Frontend**: `http://localhost:5173`
-*   **REST API Backend**: `http://localhost:5000`
 
 ---
 
@@ -121,26 +91,3 @@ env-vault list
 ```bash
 env-vault logout
 ```
-
----
-
-## 🚀 Production Cloud Deployment
-
-### 💻 1. Express Backend ➡️ Render
-1. Go to [Render](https://render.com) and create a **Web Service** linked to your repo.
-2. Set **Root Directory** to `backend`.
-3. Build Command: `npm install`
-4. Start Command: `node src/index.js`
-5. Configure Environment Variables: `PORT`, `MONGODB_URI`, `JWT_SECRET`, `ENCRYPTION_KEY`.
-
-### ⚡ 2. Vite Frontend ➡️ Vercel
-1. Go to [Vercel](https://vercel.com) and import your repository.
-2. Set **Root Directory** to `frontend`.
-3. Set Framework Preset to **Vite**.
-4. Configure Environment Variables:
-   * `VITE_API_URL`: Set to your Render backend URL (e.g. `https://env-vault-api.onrender.com/api`).
-
----
-
-## 📄 License
-This project is licensed under the MIT License.
