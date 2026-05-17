@@ -1,0 +1,22 @@
+{
+  "name": "env-vault-backend",
+  "version": "0.1.0",
+  "main": "src/index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.5.0",
+    "dotenv": "^16.4.5",
+    "bcrypt": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "cors": "^2.8.5",
+    "cookie-parser": "^1.4.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
+}

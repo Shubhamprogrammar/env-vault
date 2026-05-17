@@ -1,0 +1,18 @@
+{
+  "name": "env-vault",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend",
+    "cli"
+  ],
+  "scripts": {
+    "install-all": "npm install && cd frontend && npm install && cd ../backend && npm install && cd ../cli && npm install",
+    "dev": "concurrently \"npm run dev --workspace=frontend\" \"npm run dev --workspace=backend\"",
+    "start": "concurrently \"npm start --workspace=frontend\" \"npm start --workspace=backend\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
