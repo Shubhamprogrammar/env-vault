@@ -32,6 +32,9 @@ function saveConfig(config) {
 }
 
 const config = loadConfig();
+if (process.env.ENV_VAULT_API_URL) {
+  config.apiUrl = process.env.ENV_VAULT_API_URL;
+}
 
 // Axios instance with config headers
 const api = axios.create({
