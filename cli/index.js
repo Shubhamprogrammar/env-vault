@@ -12,7 +12,7 @@ const os = require('os');
 const program = new Command();
 
 const CONFIG_PATH = path.join(os.homedir(), '.env-vault-config.json');
-const DEFAULT_API_URL = 'http://localhost:5000/api';
+const DEFAULT_API_URL = 'https://env-vault-xv3z.onrender.com/api';
 
 // Utility functions for loading/saving config
 function loadConfig() {
