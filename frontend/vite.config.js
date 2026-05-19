@@ -8,6 +8,6 @@ export default defineConfig({
     open: true,
   },
   build: {
-    outDir: '../dist/frontend',
+    outDir: 'dist',
   },
 });
