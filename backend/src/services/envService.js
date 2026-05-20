@@ -57,6 +57,9 @@ async function pushFullEnvironment(projectId, envName, variablesMap, userId) {
   const project = await verifyAndGetProject(projectId, userId);
   let env = project.environments.find(e => e.name === envName);
   if (!env) {
+    if (Object.keys(variablesMap).length === 0) {
+      throw new Error('Cannot push an empty environment. Add variables to .env before pushing.');
+    }
     env = { name: envName, variables: [] };
     project.environments.push(env);
   }

@@ -243,6 +243,11 @@ program
       const envBuffer = fs.readFileSync(envPath);
       const parsedEnv = dotenv.parse(envBuffer);
 
+      if (Object.keys(parsedEnv).length === 0) {
+        console.log(chalk.red('❌ Error: No variables found in local .env file. Make sure .env contains KEY=VALUE lines.'));
+        return;
+      }
+
       console.log(chalk.yellow(`Pushing environment variables for ${chalk.bold(env)} to project ${chalk.bold(projectId)}...`));
 
       const res = await api.post(`/env/${projectId}/envs/${env}/push`, {
