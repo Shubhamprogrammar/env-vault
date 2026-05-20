@@ -8,6 +8,7 @@ const dotenv = require('dotenv');
 const inquirer = require('inquirer');
 const chalk = require('chalk');
 const os = require('os');
+const { version } = require('./package.json');
 
 const program = new Command();
 
@@ -88,7 +89,7 @@ function handleAxiosError(err) {
 program
   .name('env-vault')
   .description('CLI to sync environment variables securely with Env-Vault')
-  .version('0.1.0');
+  .version(version);
 
 // Login command
 program
